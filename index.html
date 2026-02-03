@@ -38,7 +38,7 @@
         
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -112,7 +112,7 @@
         }
         
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .form-label {
@@ -186,9 +186,9 @@
         
         .certificate-container {
             width: 100%;
-            max-width: 900px;
+            max-width: 1100px;
             background-color: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -200,10 +200,12 @@
             background-color: var(--off-white);
             border: 3px solid var(--primary-blue);
             border-image: linear-gradient(45deg, var(--primary-blue), var(--gold)) 1;
-            padding: 40px;
-            min-height: 800px;
+            padding: 30px 40px;
+            width: 100%;
+            height: 700px;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
         
         /* Effet de texture de papier */
@@ -222,12 +224,15 @@
         .certificate-content {
             position: relative;
             z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .certificate-header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 25px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
             border-bottom: 2px solid var(--light-blue);
             position: relative;
         }
@@ -236,7 +241,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .logo {
@@ -261,9 +266,9 @@
         }
         
         .academy-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--medium-blue);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-weight: 500;
         }
         
@@ -271,16 +276,16 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
             color: var(--primary-blue);
         }
         
         .divider {
             height: 2px;
             background: linear-gradient(to right, transparent, var(--gold), var(--light-blue), var(--gold), transparent);
-            margin: 20px 0;
+            margin: 15px 0;
             position: relative;
         }
         
@@ -304,22 +309,24 @@
         .certificate-title {
             font-family: 'Playfair Display', serif;
             text-align: center;
-            font-size: 2.8rem;
+            font-size: 2.3rem;
             color: var(--primary-blue);
-            margin: 25px 0;
+            margin: 15px 0 25px 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             letter-spacing: 1.5px;
         }
         
         .certificate-body {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.5;
             color: #333;
-            margin-bottom: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .field {
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
         
         .field-label {
@@ -332,24 +339,23 @@
         .field-value {
             padding-bottom: 5px;
             border-bottom: 1px dotted var(--dark-gray);
-            min-height: 28px;
+            min-height: 24px;
             color: #111;
         }
         
         .highlight {
             color: var(--primary-blue);
             font-weight: 600;
-            text-decoration: underline;
-            text-decoration-color: var(--gold);
         }
         
         .signature-area {
             text-align: right;
-            margin-top: 60px;
+            margin-top: auto;
+            padding-top: 20px;
         }
         
         .signature-line {
-            width: 300px;
+            width: 250px;
             height: 1px;
             background-color: #333;
             margin: 0 0 5px auto;
@@ -372,6 +378,14 @@
             left: 40px;
             font-size: 0.9rem;
             color: var(--dark-gray);
+        }
+        
+        .location-date {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px dashed #ccc;
         }
         
         .footer {
@@ -398,7 +412,7 @@
             margin-right: 8px;
         }
         
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             .main-content {
                 flex-direction: column;
             }
@@ -412,11 +426,12 @@
             }
             
             .certificate {
-                padding: 25px;
+                padding: 20px;
+                height: 650px;
             }
             
             .certificate-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
         }
         
@@ -439,8 +454,36 @@
                 gap: 5px;
             }
             
-            .signature-area {
-                margin-top: 40px;
+            .certificate {
+                height: 750px;
+            }
+            
+            .location-date {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .form-section, header, .footer, .btn {
+                display: none;
+            }
+            
+            .certificate-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            
+            .certificate {
+                border: 3px solid var(--primary-blue);
+                height: auto;
+                min-height: 700px;
             }
         }
     </style>
@@ -458,7 +501,7 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="fullName">Nom et Prénom :</label>
-                    <input type="text" id="fullName" class="form-input" placeholder="Ex: Jean Dupont" value="">
+                    <input type="text" id="fullName" class="form-input" placeholder="Ex: DEGUENON Joseph Yelinha" value="DEGUENON Joseph Yelinha">
                 </div>
                 
                 <div class="form-group">
@@ -466,8 +509,13 @@
                     <select id="trainingType" class="form-select">
                         <option value="Négociation Commerciale, Web Marketing et Chargé Clientèle">Négociation Commerciale, Web Marketing et Chargé Clientèle</option>
                         <option value="Développement Web (No-Code)">Développement Web (No-Code)</option>
-                        <option value="Développement Web Freelance">Développement Web Freelance</option>
+                        <option value="Développement Web Freelance" selected>Développement Web Freelance</option>
                     </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="trainingLocation">Lieu de la Formation :</label>
+                    <input type="text" id="trainingLocation" class="form-input" placeholder="Ex: Siège de Luckily Academy" value="Siège de Luckily Academy">
                 </div>
                 
                 <div class="form-group">
@@ -482,7 +530,7 @@
                 
                 <div class="form-group">
                     <label class="form-label" for="city">Fait à (Ville) :</label>
-                    <input type="text" id="city" class="form-input" placeholder="Ex: Paris" value="Cotonou">
+                    <input type="text" id="city" class="form-input" placeholder="Ex: Cotonou" value="Cotonou">
                 </div>
                 
                 <div class="form-group">
@@ -497,7 +545,7 @@
                 
                 <div class="info-message">
                     <i class="fas fa-info-circle"></i> 
-                    Le numéro matricule est généré automatiquement et s'incrémente à chaque téléchargement.
+                    Le numéro matricule est généré automatiquement et s'incrémente à chaque téléchargement. Format paysage A3 pour un meilleur affichage.
                 </div>
             </section>
             
@@ -529,26 +577,26 @@
                             <div class="certificate-body">
                                 <div class="field">
                                     <div class="field-label">Nom et Prénom :</div>
-                                    <div id="certFullName" class="field-value">__________________________</div>
+                                    <div id="certFullName" class="field-value">DEGUENON Joseph Yelinha</div>
                                 </div>
                                 
                                 <div class="field">
                                     <div class="field-label">Numéro matricule :</div>
-                                    <div id="certMatricule" class="field-value">0001312</div>
+                                    <div id="certMatricule" class="field-value">0001313</div>
                                 </div>
                                 
                                 <p>Le centre de formation <span class="highlight">Luckily Academy</span> atteste par la présente que l'apprenant(e) :</p>
                                 
-                                <div style="margin: 20px 0; padding-left: 20px;">
-                                    <p><strong>Nom et Prénom :</strong> <span id="certFullNameText">__________________________</span></p>
-                                    <p><strong>Numéro matricule :</strong> <span id="certMatriculeText">0001312</span></p>
+                                <div style="margin: 15px 0; padding-left: 20px;">
+                                    <p><strong>Nom et Prénom :</strong> <span id="certFullNameText">DEGUENON Joseph Yelinha</span></p>
+                                    <p><strong>Numéro matricule :</strong> <span id="certMatriculeText">0001313</span></p>
                                 </div>
                                 
-                                <p>a suivi avec assiduité et succès la formation professionnelle suivante :</p>
+                                <p>a suivi avec assiduité et succès la formation professionnelle suivante <strong>au sein de <span id="certTrainingLocation">Siège de Luckily Academy</span></strong> :</p>
                                 
                                 <div class="field">
                                     <div class="field-label">Formation suivie :</div>
-                                    <div id="certTraining" class="field-value highlight">Négociation Commerciale, Web Marketing et Chargé Clientèle</div>
+                                    <div id="certTraining" class="field-value highlight">Développement Web Freelance</div>
                                 </div>
                                 
                                 <p>ainsi que des modules complémentaires d'anglais professionnel destinés à améliorer ses compétences linguistiques et sa maîtrise de l'anglais dans un contexte professionnel.</p>
@@ -560,18 +608,18 @@
                                 
                                 <p>La présente attestation est délivrée à l'intéressé(e) pour faire valoir ce que de droit.</p>
                                 
-                                <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                                <div class="location-date">
                                     <div>
                                         <p><strong>Fait à :</strong> <span id="certCity">Cotonou</span></p>
                                         <p><strong>Le :</strong> <span id="certDate">__/__/____</span></p>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="signature-area">
-                                <div class="signature-line"></div>
-                                <div class="signature-name">Luc DEGUENON</div>
-                                <div class="signature-title">Promoteur de Luckily Academy</div>
+                                
+                                <div class="signature-area">
+                                    <div class="signature-line"></div>
+                                    <div class="signature-name">Luc DEGUENON</div>
+                                    <div class="signature-title">Promoteur de Luckily Academy</div>
+                                </div>
                             </div>
                             
                             <div class="serial-number">
@@ -585,7 +633,7 @@
         
         <footer class="footer">
             <p>Luckily Academy &copy; 2023 - Centre de Formation Professionnelle</p>
-            <p>Cet outil génère des attestations officielles avec numéros de série uniques.</p>
+            <p>Cet outil génère des attestations officielles avec numéros de série uniques. Format paysage A3.</p>
         </footer>
     </div>
     
@@ -594,7 +642,7 @@
     
     <script>
         // Initialisation des variables
-        let matriculeNumber = 1312; // Commence à 0001312
+        let matriculeNumber = 1313; // Commence à 0001313
         let downloadCount = 0;
         
         // Initialiser la date d'aujourd'hui
@@ -625,6 +673,7 @@
         // Mettre à jour automatiquement lorsque les champs changent
         document.getElementById('fullName').addEventListener('input', updateCertificate);
         document.getElementById('trainingType').addEventListener('change', updateCertificate);
+        document.getElementById('trainingLocation').addEventListener('input', updateCertificate);
         document.getElementById('mention').addEventListener('change', updateCertificate);
         document.getElementById('city').addEventListener('input', updateCertificate);
         document.getElementById('date').addEventListener('change', updateCertificate);
@@ -633,6 +682,7 @@
             // Récupérer les valeurs du formulaire
             const fullName = document.getElementById('fullName').value || "__________________________";
             const trainingType = document.getElementById('trainingType').value;
+            const trainingLocation = document.getElementById('trainingLocation').value || "Siège de Luckily Academy";
             const mention = document.getElementById('mention').value;
             const city = document.getElementById('city').value || "Cotonou";
             const dateValue = document.getElementById('date').value;
@@ -648,6 +698,7 @@
             document.getElementById('certFullName').textContent = fullName;
             document.getElementById('certFullNameText').textContent = fullName;
             document.getElementById('certTraining').textContent = trainingType;
+            document.getElementById('certTrainingLocation').textContent = trainingLocation;
             document.getElementById('certMention').textContent = mention;
             document.getElementById('certCity').textContent = city;
             document.getElementById('certDate').textContent = displayDate;
@@ -689,22 +740,28 @@
             const cleanName = fullName.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 20);
             const cleanTraining = trainingType.substring(0, 30).replace(/[^a-zA-Z0-9]/g, '_');
             
-            // Configuration pour html2pdf
+            // Configuration pour html2pdf - Format A3 PAYSAGE
             const element = document.getElementById('certificate');
             const opt = {
-                margin: [10, 10, 10, 10],
-                filename: `Attestation_${cleanName}_${cleanTraining}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
+                margin: [15, 15, 15, 15],
+                filename: `Attestation_Luckily_Academy_${cleanName}.pdf`,
+                image: { 
+                    type: 'jpeg', 
+                    quality: 0.98 
+                },
                 html2canvas: { 
                     scale: 2,
                     useCORS: true,
                     letterRendering: true,
-                    backgroundColor: '#f9f7f3'
+                    backgroundColor: '#f9f7f3',
+                    width: 1100,
+                    height: 700,
+                    windowWidth: 1100
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a3', 
-                    orientation: 'portrait' 
+                    orientation: 'landscape'  // Format PAYSAGE pour éviter la coupure
                 }
             };
             
@@ -712,7 +769,11 @@
             html2pdf().set(opt).from(element).save();
             
             // Afficher un message de confirmation
-            alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_${cleanName}_${cleanTraining}.pdf\nNuméro matricule attribué: ${formattedMatricule}\n\nTotal de téléchargements: ${downloadCount}`);
+            alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_Luckily_Academy_${cleanName}.pdf\nNuméro matricule attribué: ${formattedMatricule}\n\nTotal de téléchargements: ${downloadCount}`);
+            
+            // Mettre à jour le formulaire avec le nouveau numéro matricule pour la prochaine fois
+            document.getElementById('certMatricule').textContent = formattedMatricule;
+            document.getElementById('certMatriculeText').textContent = formattedMatricule;
         });
         
         // Fonction pour simuler l'impression
@@ -721,4 +782,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
