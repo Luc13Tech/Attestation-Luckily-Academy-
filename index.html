@@ -178,17 +178,14 @@
             color: var(--royal-blue);
         }
         
-        .info-box i {
-            color: var(--accent-gold);
-            margin-right: 8px;
-        }
-        
         /* CERTIFICAT - FORMAT A4 PAYSAGE EXACT */
         .certificate-wrapper {
             width: 100%;
             display: flex;
             justify-content: center;
             padding: 20px 0;
+            overflow-x: auto; /* Permet de scroller sur mobile */
+            -webkit-overflow-scrolling: touch;
         }
         
         .certificate-container {
@@ -199,16 +196,21 @@
             position: relative;
         }
         
+        /* DIMENSIONS EXACTES A4 PAYSAGE : 297mm x 210mm = 1123px x 794px */
         .certificate {
             position: relative;
             background: var(--parchment);
-            /* DIMENSIONS EXACTES A4 PAYSAGE : 297mm x 210mm */
-            width: 1123px;  /* 297mm à 96 DPI */
-            height: 794px;  /* 210mm à 96 DPI */
+            width: 1123px;   /* 297mm à 96 DPI */
+            height: 794px;   /* 210mm à 96 DPI */
             display: flex;
             flex-direction: column;
             overflow: hidden;
             border: 2px solid var(--royal-blue);
+            /* Empêche le redimensionnement sur mobile */
+            min-width: 1123px;
+            min-height: 794px;
+            max-width: 1123px;
+            max-height: 794px;
         }
         
         .certificate-content {
@@ -218,6 +220,9 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            /* S'assurer que le contenu utilise tout l'espace */
+            flex: 1;
+            min-height: 0;
         }
         
         /* En-tête */
@@ -276,12 +281,13 @@
         
         /* Corps du certificat */
         .certificate-body {
-            flex-grow: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             font-size: 1.1rem;
             line-height: 1.6;
             color: #2c3e50;
-            display: flex;
-            flex-direction: column;
+            min-height: 0; /* Important pour le flex */
         }
         
         .intro-text {
@@ -318,7 +324,7 @@
             font-size: 1.2rem;
             color: var(--deep-blue);
             font-weight: 600;
-            flex-grow: 1;
+            flex: 1;
             padding-bottom: 3px;
             border-bottom: 1px dotted var(--accent-gold);
         }
@@ -377,9 +383,9 @@
             font-weight: 700;
         }
         
-        /* Zone de signature SÉPARÉE - COMME DANS VOTRE IMAGE */
+        /* Zone de signature SÉPARÉE */
         .signature-area {
-            margin-top: 40px;
+            margin-top: auto; /* Pousse vers le bas */
             padding-top: 30px;
             border-top: 2px solid rgba(30, 58, 138, 0.2);
             display: grid;
@@ -467,30 +473,12 @@
             z-index: 0;
         }
         
-        /* Responsive */
+        /* Responsive pour l'affichage web */
         @media (max-width: 1200px) {
             .certificate {
-                width: 100%;
-                max-width: 1123px;
-                height: auto;
-                min-height: 794px;
-            }
-            
-            .certificate-content {
-                padding: 30px 40px;
-            }
-            
-            .academy-title {
-                font-size: 2rem;
-            }
-            
-            .main-title {
-                font-size: 1.7rem;
-            }
-            
-            .signature-area {
-                grid-template-columns: 1fr;
-                gap: 30px;
+                /* Sur desktop, on garde les dimensions mais on permet le scroll */
+                transform: scale(0.9);
+                transform-origin: top center;
             }
         }
         
@@ -508,32 +496,50 @@
             }
             
             .certificate {
-                transform: scale(0.85);
+                /* Sur mobile, on réduit un peu mais on garde le ratio */
+                transform: scale(0.7);
                 transform-origin: top center;
+            }
+            
+            .certificate-wrapper {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 10px;
             }
         }
         
+        /* Styles d'impression et PDF */
         @media print {
             body {
                 background: white;
                 padding: 0;
                 margin: 0;
+                width: 100%;
+                height: 100%;
             }
             
             .header, .form-container, .button-group, .info-box {
                 display: none;
             }
             
-            .certificate-container {
+            .certificate-wrapper, .certificate-container {
                 box-shadow: none;
                 padding: 0;
                 margin: 0;
+                width: 100%;
+                height: 100%;
+                overflow: visible;
             }
             
             .certificate {
                 border: 2px solid var(--royal-blue);
-                width: 297mm;
-                height: 210mm;
+                width: 100%;
+                height: 100%;
+                min-width: 100%;
+                min-height: 100%;
+                max-width: 100%;
+                max-height: 100%;
+                transform: none !important;
                 margin: 0;
                 padding: 0;
             }
@@ -796,7 +802,7 @@
             document.getElementById('serialNumber').textContent = serial;
         }
         
-        // Télécharger en PDF
+        // Télécharger en PDF - VERSION OPTIMISÉE
         document.getElementById('downloadBtn').addEventListener('click', function() {
             // Incrémenter le matricule pour le PROCHAIN
             const currentMatriculeForPDF = currentMatricule;
@@ -813,46 +819,58 @@
             // Mettre à jour temporairement pour le PDF
             document.getElementById('certMatricule').textContent = matriculeForPDF;
             
-            // Configuration OPTIMISÉE pour le PDF en format A4 paysage
+            // CONFIGURATION HTML2PDF OPTIMISÉE
             const element = document.getElementById('certificate');
             const opt = {
-                margin: [0, 0, 0, 0],
+                margin: [0, 0, 0, 0], // Pas de marges
                 filename: `Attestation_${matriculeForPDF}_${cleanName}.pdf`,
                 image: { 
                     type: 'jpeg', 
-                    quality: 0.98 
+                    quality: 0.98 // Bonne qualité
                 },
                 html2canvas: { 
-                    scale: 2,
+                    scale: 2, // Haute résolution
                     useCORS: true,
                     letterRendering: true,
                     backgroundColor: '#faf3e0',
-                    width: 1123,
-                    height: 794,
-                    windowWidth: 1123,
-                    windowHeight: 794,
+                    // DIMENSIONS EXACTES FORCÉES
+                    width: 1123, // Largeur exacte A4 paysage
+                    height: 794,  // Hauteur exacte A4 paysage
+                    windowWidth: 1123, // Forcer la largeur de la fenêtre
+                    windowHeight: 794, // Forcer la hauteur de la fenêtre
+                    // S'assurer que tout est visible
+                    scrollX: 0,
+                    scrollY: 0,
                     onclone: function(clonedDoc) {
-                        // S'assurer que tout le contenu est visible
+                        // Forcer les dimensions sur le clone
                         const certificate = clonedDoc.getElementById('certificate');
                         certificate.style.width = '1123px';
                         certificate.style.height = '794px';
-                        certificate.style.overflow = 'visible';
+                        certificate.style.position = 'absolute';
+                        certificate.style.top = '0';
+                        certificate.style.left = '0';
+                        
+                        // S'assurer que le contenu est bien positionné
+                        const content = certificate.querySelector('.certificate-content');
+                        if (content) {
+                            content.style.padding = '40px 50px';
+                            content.style.boxSizing = 'border-box';
+                        }
                     }
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a4', 
-                    orientation: 'landscape',
+                    orientation: 'landscape', // FORMAT PAYSAGE
                     compress: true,
-                    hotfixes: ['px_scaling']
-                },
-                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+                    hotfixes: ['px_scaling'] // Fixe les problèmes de scaling
+                }
             };
             
             // Désactiver le bouton pendant la génération
             const downloadBtn = document.getElementById('downloadBtn');
             const originalText = downloadBtn.innerHTML;
-            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Génération en cours...';
+            downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Génération PDF...';
             downloadBtn.disabled = true;
             
             // Générer le PDF
