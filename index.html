@@ -764,6 +764,12 @@
         let matriculeNumber = 1313; // Commence à 0001313
         let downloadCount = 0;
         
+        // Fonction pour mettre à jour l'affichage du matricule
+        function updateMatriculeDisplay() {
+            const formattedMatricule = matriculeNumber.toString().padStart(7, '0');
+            document.getElementById('certMatricule').textContent = formattedMatricule;
+        }
+        
         // Initialiser la date d'aujourd'hui
         document.addEventListener('DOMContentLoaded', function() {
             const today = new Date();
@@ -773,6 +779,9 @@
             // Formater la date pour l'affichage
             const displayDate = formatDate(today);
             document.getElementById('certDate').textContent = displayDate;
+            
+            // Mettre à jour l'affichage du matricule
+            updateMatriculeDisplay();
             
             // Générer l'attestation avec les valeurs par défaut
             updateCertificate();
@@ -820,10 +829,6 @@
             document.getElementById('certCity').textContent = city;
             document.getElementById('certDate').textContent = displayDate;
             
-            // Mettre à jour le numéro matricule (sans incrémenter)
-            const formattedMatricule = matriculeNumber.toString().padStart(7, '0');
-            document.getElementById('certMatricule').textContent = formattedMatricule;
-            
             // Générer un numéro de série unique basé sur le nom et la date
             const serial = generateSerialNumber(fullName, dateValue);
             document.getElementById('serialNumber').textContent = serial;
@@ -839,23 +844,19 @@
         
         // Télécharger l'attestation en PDF
         document.getElementById('downloadBtn').addEventListener('click', function() {
-            // Incrémenter le numéro matricule pour le prochain téléchargement
+            // Incrémenter le numéro matricule
             matriculeNumber++;
             downloadCount++;
+            
+            // Mettre à jour l'affichage du matricule AVANT la génération du PDF
+            updateMatriculeDisplay();
             
             // Formater le numéro matricule mis à jour
             const formattedMatricule = matriculeNumber.toString().padStart(7, '0');
             
             // Récupérer les informations pour le nom du fichier
             const fullName = document.getElementById('fullName').value || "Attestation";
-            const trainingType = document.getElementById('trainingType').value;
             const cleanName = fullName.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 20);
-            
-            // Sauvegarder les valeurs actuelles avant la mise à jour
-            const currentMatricule = document.getElementById('certMatricule').textContent;
-            
-            // Mettre temporairement à jour avec le nouveau matricule pour le PDF
-            document.getElementById('certMatricule').textContent = formattedMatricule;
             
             // Configuration pour html2pdf - Format A4 PORTRAIT EXACT
             const element = document.getElementById('certificate');
@@ -886,11 +887,12 @@
             
             // Générer et télécharger le PDF
             html2pdf().set(opt).from(element).save().then(() => {
-                // Après le téléchargement, restaurer les valeurs originales pour l'affichage
-                document.getElementById('certMatricule').textContent = currentMatricule;
+                // Afficher un message de confirmation avec le prochain numéro
+                const nextMatricule = (matriculeNumber + 1).toString().padStart(7, '0');
+                alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_Luckily_Academy_${cleanName}.pdf\nNuméro matricule utilisé: ${formattedMatricule}\nProchain numéro matricule: ${nextMatricule}\n\nTotal de téléchargements: ${downloadCount}`);
                 
-                // Afficher un message de confirmation
-                alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_Luckily_Academy_${cleanName}.pdf\nProchain numéro matricule: ${formattedMatricule}\n\nTotal de téléchargements: ${downloadCount}`);
+                // Mettre à jour aussi le certificat affiché pour le prochain
+                updateCertificate();
             });
         });
         
