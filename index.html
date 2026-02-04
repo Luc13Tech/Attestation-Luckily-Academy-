@@ -412,6 +412,21 @@
             margin-right: 8px;
         }
         
+        .student-info-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .student-info-item {
+            flex: 1;
+            margin-right: 20px;
+        }
+        
+        .student-info-item:last-child {
+            margin-right: 0;
+        }
+        
         @media (max-width: 1200px) {
             .main-content {
                 flex-direction: column;
@@ -427,11 +442,20 @@
             
             .certificate {
                 padding: 20px;
-                height: 650px;
+                height: 700px;
             }
             
             .certificate-title {
                 font-size: 2rem;
+            }
+            
+            .student-info-line {
+                flex-direction: column;
+            }
+            
+            .student-info-item {
+                margin-right: 0;
+                margin-bottom: 10px;
             }
         }
         
@@ -575,50 +599,55 @@
                             <h1 class="certificate-title">ATTESTATION DE FIN DE FORMATION</h1>
                             
                             <div class="certificate-body">
-                                <div class="field">
-                                    <div class="field-label">Nom et Prénom :</div>
-                                    <div id="certFullName" class="field-value">DEGUENON Joseph Yelinha</div>
-                                </div>
-                                
-                                <div class="field">
-                                    <div class="field-label">Numéro matricule :</div>
-                                    <div id="certMatricule" class="field-value">0001313</div>
+                                <div class="student-info-line">
+                                    <div class="student-info-item">
+                                        <div class="field-label">Nom et Prénom :</div>
+                                        <div id="certFullName" class="field-value">DEGUENON Joseph Yelinha</div>
+                                    </div>
+                                    <div class="student-info-item">
+                                        <div class="field-label">Numéro matricule :</div>
+                                        <div id="certMatricule" class="field-value">0001313</div>
+                                    </div>
                                 </div>
                                 
                                 <p>Le centre de formation <span class="highlight">Luckily Academy</span> atteste par la présente que l'apprenant(e) :</p>
                                 
                                 <div style="margin: 15px 0; padding-left: 20px;">
-                                    <p><strong>Nom et Prénom :</strong> <span id="certFullNameText">DEGUENON Joseph Yelinha</span></p>
-                                    <p><strong>Numéro matricule :</strong> <span id="certMatriculeText">0001313</span></p>
+                                    <p><strong>Nom et Prénom :</strong> <span id="certFullNameText" class="highlight">DEGUENON Joseph Yelinha</span></p>
+                                    <p><strong>Numéro matricule :</strong> <span id="certMatriculeText" class="highlight">0001313</span></p>
                                 </div>
                                 
                                 <p>a suivi avec assiduité et succès la formation professionnelle suivante <strong>au sein de <span id="certTrainingLocation">Siège de Luckily Academy</span></strong> :</p>
                                 
                                 <div class="field">
                                     <div class="field-label">Formation suivie :</div>
-                                    <div id="certTraining" class="field-value highlight">Développement Web Freelance</div>
+                                    <div id="certTraining" class="field-value highlight" style="font-size: 1.1rem; padding: 8px; border: 1px solid var(--gold); background-color: rgba(212, 175, 55, 0.05);">
+                                        Développement Web Freelance
+                                    </div>
                                 </div>
                                 
                                 <p>ainsi que des modules complémentaires d'anglais professionnel destinés à améliorer ses compétences linguistiques et sa maîtrise de l'anglais dans un contexte professionnel.</p>
                                 
                                 <div class="field">
                                     <div class="field-label">Mention obtenue :</div>
-                                    <div id="certMention" class="field-value">Bien</div>
+                                    <div id="certMention" class="field-value highlight" style="font-size: 1.1rem;">Bien</div>
                                 </div>
                                 
                                 <p>La présente attestation est délivrée à l'intéressé(e) pour faire valoir ce que de droit.</p>
                                 
                                 <div class="location-date">
                                     <div>
-                                        <p><strong>Fait à :</strong> <span id="certCity">Cotonou</span></p>
-                                        <p><strong>Le :</strong> <span id="certDate">__/__/____</span></p>
+                                        <p><strong>Fait à :</strong> <span id="certCity" class="highlight">Cotonou</span></p>
+                                        <p><strong>Le :</strong> <span id="certDate" class="highlight">__/__/____</span></p>
                                     </div>
-                                </div>
-                                
-                                <div class="signature-area">
-                                    <div class="signature-line"></div>
-                                    <div class="signature-name">Luc DEGUENON</div>
-                                    <div class="signature-title">Promoteur de Luckily Academy</div>
+                                    <div class="signature-area">
+                                        <p>Pour faire valoir ce que de droit,</p>
+                                        <div style="margin-top: 40px;">
+                                            <div class="signature-line"></div>
+                                            <div class="signature-name">Luc DEGUENON</div>
+                                            <div class="signature-title">Promoteur de Luckily Academy</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -730,15 +759,18 @@
             // Formater le numéro matricule mis à jour
             const formattedMatricule = matriculeNumber.toString().padStart(7, '0');
             
-            // Mettre à jour l'affichage avec le nouveau numéro matricule
-            document.getElementById('certMatricule').textContent = formattedMatricule;
-            document.getElementById('certMatriculeText').textContent = formattedMatricule;
-            
             // Récupérer les informations pour le nom du fichier
             const fullName = document.getElementById('fullName').value || "Attestation";
             const trainingType = document.getElementById('trainingType').value;
             const cleanName = fullName.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 20);
             const cleanTraining = trainingType.substring(0, 30).replace(/[^a-zA-Z0-9]/g, '_');
+            
+            // Mettre à jour l'affichage temporairement avec le nouveau numéro matricule
+            const originalMatricule = document.getElementById('certMatricule').textContent;
+            const originalMatriculeText = document.getElementById('certMatriculeText').textContent;
+            
+            document.getElementById('certMatricule').textContent = formattedMatricule;
+            document.getElementById('certMatriculeText').textContent = formattedMatricule;
             
             // Configuration pour html2pdf - Format A3 PAYSAGE
             const element = document.getElementById('certificate');
@@ -766,14 +798,14 @@
             };
             
             // Générer et télécharger le PDF
-            html2pdf().set(opt).from(element).save();
-            
-            // Afficher un message de confirmation
-            alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_Luckily_Academy_${cleanName}.pdf\nNuméro matricule attribué: ${formattedMatricule}\n\nTotal de téléchargements: ${downloadCount}`);
-            
-            // Mettre à jour le formulaire avec le nouveau numéro matricule pour la prochaine fois
-            document.getElementById('certMatricule').textContent = formattedMatricule;
-            document.getElementById('certMatriculeText').textContent = formattedMatricule;
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Après le téléchargement, restaurer les valeurs originales pour l'affichage
+                document.getElementById('certMatricule').textContent = originalMatricule;
+                document.getElementById('certMatriculeText').textContent = originalMatriculeText;
+                
+                // Afficher un message de confirmation
+                alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_Luckily_Academy_${cleanName}.pdf\nProchain numéro matricule: ${formattedMatricule}\n\nTotal de téléchargements: ${downloadCount}`);
+            });
         });
         
         // Fonction pour simuler l'impression
@@ -782,4 +814,4 @@
         }
     </script>
 </body>
-    </html>
+</html>
