@@ -188,7 +188,7 @@
             width: 100%;
             max-width: 1100px;
             background-color: var(--white);
-            padding: 30px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -198,11 +198,10 @@
         .certificate {
             position: relative;
             background-color: var(--off-white);
-            border: 3px solid var(--primary-blue);
-            border-image: linear-gradient(45deg, var(--primary-blue), var(--gold)) 1;
-            padding: 30px 40px;
+            border: 2px solid var(--primary-blue);
+            padding: 40px;
             width: 100%;
-            height: 700px;
+            min-height: 750px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -231,9 +230,7 @@
         
         .certificate-header {
             text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--light-blue);
+            margin-bottom: 30px;
             position: relative;
         }
         
@@ -245,47 +242,56 @@
         }
         
         .logo {
-            width: 60px;
-            height: 60px;
-            background-color: var(--light-blue);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--light-blue), var(--medium-blue));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 20px;
             color: white;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 2.5rem;
+            box-shadow: 0 6px 15px rgba(56, 189, 248, 0.3);
         }
         
         .academy-name {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             color: var(--primary-blue);
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         .academy-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--medium-blue);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 500;
+            letter-spacing: 1px;
         }
         
         .contact-info {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             margin-bottom: 10px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--primary-blue);
+            padding: 10px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
         .divider {
             height: 2px;
             background: linear-gradient(to right, transparent, var(--gold), var(--light-blue), var(--gold), transparent);
-            margin: 15px 0;
+            margin: 20px 0 30px 0;
             position: relative;
         }
         
@@ -295,7 +301,7 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--gold);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
         
         .divider:before {
@@ -309,38 +315,51 @@
         .certificate-title {
             font-family: 'Playfair Display', serif;
             text-align: center;
-            font-size: 2.3rem;
+            font-size: 2.8rem;
             color: var(--primary-blue);
-            margin: 15px 0 25px 0;
+            margin: 10px 0 40px 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
         }
         
         .certificate-body {
-            font-size: 1rem;
-            line-height: 1.5;
+            font-size: 1.1rem;
+            line-height: 1.6;
             color: #333;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         
+        .field-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+        
         .field {
-            margin-bottom: 15px;
+            flex: 1;
+            margin-right: 30px;
+        }
+        
+        .field:last-child {
+            margin-right: 0;
         }
         
         .field-label {
             font-weight: 600;
             color: var(--primary-blue);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             display: block;
+            font-size: 1.1rem;
         }
         
         .field-value {
-            padding-bottom: 5px;
-            border-bottom: 1px dotted var(--dark-gray);
-            min-height: 24px;
+            padding-bottom: 8px;
+            border-bottom: 2px dotted var(--dark-gray);
+            min-height: 28px;
             color: #111;
+            font-size: 1.2rem;
         }
         
         .highlight {
@@ -348,44 +367,84 @@
             font-weight: 600;
         }
         
+        .main-text {
+            margin: 25px 0;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        
+        .student-info-box {
+            background-color: rgba(56, 189, 248, 0.05);
+            border: 1px solid var(--light-blue);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .training-box {
+            background-color: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .training-title {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .training-name {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
         .signature-area {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #ccc;
+        }
+        
+        .place-date {
+            flex: 1;
+        }
+        
+        .signature-box {
+            flex: 1;
             text-align: right;
-            margin-top: auto;
-            padding-top: 20px;
         }
         
         .signature-line {
-            width: 250px;
+            width: 300px;
             height: 1px;
             background-color: #333;
-            margin: 0 0 5px auto;
+            margin: 40px 0 5px auto;
         }
         
         .signature-name {
             font-weight: 700;
             color: var(--primary-blue);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            margin-top: 5px;
         }
         
         .signature-title {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--dark-gray);
         }
         
         .serial-number {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 40px;
             font-size: 0.9rem;
             color: var(--dark-gray);
-        }
-        
-        .location-date {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            padding-top: 10px;
-            border-top: 1px dashed #ccc;
         }
         
         .footer {
@@ -412,21 +471,6 @@
             margin-right: 8px;
         }
         
-        .student-info-line {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-        
-        .student-info-item {
-            flex: 1;
-            margin-right: 20px;
-        }
-        
-        .student-info-item:last-child {
-            margin-right: 0;
-        }
-        
         @media (max-width: 1200px) {
             .main-content {
                 flex-direction: column;
@@ -437,25 +481,29 @@
             }
             
             .certificate-container {
-                padding: 20px;
+                padding: 15px;
             }
             
             .certificate {
-                padding: 20px;
-                height: 700px;
+                padding: 30px;
+                min-height: 800px;
             }
             
             .certificate-title {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
             
-            .student-info-line {
+            .academy-name {
+                font-size: 2.3rem;
+            }
+            
+            .field-row {
                 flex-direction: column;
             }
             
-            .student-info-item {
+            .field {
                 margin-right: 0;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
             }
         }
         
@@ -465,26 +513,41 @@
             }
             
             .certificate-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .academy-name {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .contact-info {
                 flex-direction: column;
                 align-items: center;
-                gap: 5px;
+                gap: 10px;
             }
             
-            .certificate {
-                height: 750px;
+            .signature-area {
+                flex-direction: column;
+                gap: 30px;
             }
             
-            .location-date {
+            .signature-box {
+                text-align: left;
+            }
+            
+            .signature-line {
+                width: 200px;
+                margin: 40px 0 5px 0;
+            }
+            
+            .logo-container {
                 flex-direction: column;
                 gap: 15px;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
             }
         }
         
@@ -505,9 +568,8 @@
             }
             
             .certificate {
-                border: 3px solid var(--primary-blue);
-                height: auto;
-                min-height: 700px;
+                border: 2px solid var(--primary-blue);
+                min-height: 750px;
             }
         }
     </style>
@@ -582,15 +644,29 @@
                                     <div class="logo">
                                         <i class="fas fa-graduation-cap"></i>
                                     </div>
-                                    <div class="academy-name">LUCKILY ACADEMY</div>
+                                    <div>
+                                        <div class="academy-name">LUCKILY ACADEMY</div>
+                                        <div class="academy-subtitle">Centre de Formation Professionnelle</div>
+                                    </div>
                                 </div>
-                                <div class="academy-subtitle">Centre de Formation Professionnelle</div>
                                 
                                 <div class="contact-info">
-                                    <div>Email : luckily754@gmail.com</div>
-                                    <div>Appel : +221 78 485 56 99</div>
-                                    <div>WhatsApp : +229 01 59 60 95 81</div>
-                                    <div>Numéro IFU : 0202249518137</div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Email : luckily754@gmail.com</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span>Appel : +221 78 485 56 99</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>WhatsApp : +229 01 59 60 95 81</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-id-card"></i>
+                                        <span>Numéro IFU : 0202249518137</span>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -599,54 +675,53 @@
                             <h1 class="certificate-title">ATTESTATION DE FIN DE FORMATION</h1>
                             
                             <div class="certificate-body">
-                                <div class="student-info-line">
-                                    <div class="student-info-item">
+                                <div class="field-row">
+                                    <div class="field">
                                         <div class="field-label">Nom et Prénom :</div>
                                         <div id="certFullName" class="field-value">DEGUENON Joseph Yelinha</div>
                                     </div>
-                                    <div class="student-info-item">
+                                    <div class="field">
                                         <div class="field-label">Numéro matricule :</div>
                                         <div id="certMatricule" class="field-value">0001313</div>
                                     </div>
                                 </div>
                                 
-                                <p>Le centre de formation <span class="highlight">Luckily Academy</span> atteste par la présente que l'apprenant(e) :</p>
+                                <div class="main-text">
+                                    <p>Le centre de formation <span class="highlight">Luckily Academy</span> atteste par la présente que l'apprenant(e) :</p>
+                                </div>
                                 
-                                <div style="margin: 15px 0; padding-left: 20px;">
+                                <div class="student-info-box">
                                     <p><strong>Nom et Prénom :</strong> <span id="certFullNameText" class="highlight">DEGUENON Joseph Yelinha</span></p>
                                     <p><strong>Numéro matricule :</strong> <span id="certMatriculeText" class="highlight">0001313</span></p>
                                 </div>
                                 
-                                <p>a suivi avec assiduité et succès la formation professionnelle suivante <strong>au sein de <span id="certTrainingLocation">Siège de Luckily Academy</span></strong> :</p>
-                                
-                                <div class="field">
-                                    <div class="field-label">Formation suivie :</div>
-                                    <div id="certTraining" class="field-value highlight" style="font-size: 1.1rem; padding: 8px; border: 1px solid var(--gold); background-color: rgba(212, 175, 55, 0.05);">
-                                        Développement Web Freelance
-                                    </div>
+                                <div class="main-text">
+                                    <p>a suivi avec assiduité et succès la formation professionnelle suivante <strong>au sein de <span id="certTrainingLocation">Siège de Luckily Academy</span></strong> :</p>
                                 </div>
                                 
-                                <p>ainsi que des modules complémentaires d'anglais professionnel destinés à améliorer ses compétences linguistiques et sa maîtrise de l'anglais dans un contexte professionnel.</p>
-                                
-                                <div class="field">
-                                    <div class="field-label">Mention obtenue :</div>
-                                    <div id="certMention" class="field-value highlight" style="font-size: 1.1rem;">Bien</div>
+                                <div class="training-box">
+                                    <div class="training-title">Formation suivie :</div>
+                                    <div id="certTraining" class="training-name">Développement Web Freelance</div>
                                 </div>
                                 
-                                <p>La présente attestation est délivrée à l'intéressé(e) pour faire valoir ce que de droit.</p>
+                                <div class="main-text">
+                                    <p>ainsi que des modules complémentaires d'anglais professionnel destinés à améliorer ses compétences linguistiques et sa maîtrise de l'anglais dans un contexte professionnel.</p>
+                                    
+                                    <p>Le candidat a obtenu la mention : <span id="certMention" class="highlight">Bien</span></p>
+                                    
+                                    <p>La présente attestation est délivrée à l'intéressé(e) pour faire valoir ce que de droit.</p>
+                                </div>
                                 
-                                <div class="location-date">
-                                    <div>
+                                <div class="signature-area">
+                                    <div class="place-date">
                                         <p><strong>Fait à :</strong> <span id="certCity" class="highlight">Cotonou</span></p>
                                         <p><strong>Le :</strong> <span id="certDate" class="highlight">__/__/____</span></p>
                                     </div>
-                                    <div class="signature-area">
-                                        <p>Pour faire valoir ce que de droit,</p>
-                                        <div style="margin-top: 40px;">
-                                            <div class="signature-line"></div>
-                                            <div class="signature-name">Luc DEGUENON</div>
-                                            <div class="signature-title">Promoteur de Luckily Academy</div>
-                                        </div>
+                                    
+                                    <div class="signature-box">
+                                        <div class="signature-line"></div>
+                                        <div class="signature-name">Luc DEGUENON</div>
+                                        <div class="signature-title">Promoteur de Luckily Academy</div>
                                     </div>
                                 </div>
                             </div>
@@ -765,17 +840,18 @@
             const cleanName = fullName.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 20);
             const cleanTraining = trainingType.substring(0, 30).replace(/[^a-zA-Z0-9]/g, '_');
             
-            // Mettre à jour l'affichage temporairement avec le nouveau numéro matricule
-            const originalMatricule = document.getElementById('certMatricule').textContent;
-            const originalMatriculeText = document.getElementById('certMatriculeText').textContent;
+            // Sauvegarder les valeurs actuelles avant la mise à jour
+            const currentMatricule = document.getElementById('certMatricule').textContent;
+            const currentMatriculeText = document.getElementById('certMatriculeText').textContent;
             
+            // Mettre temporairement à jour avec le nouveau matricule pour le PDF
             document.getElementById('certMatricule').textContent = formattedMatricule;
             document.getElementById('certMatriculeText').textContent = formattedMatricule;
             
             // Configuration pour html2pdf - Format A3 PAYSAGE
             const element = document.getElementById('certificate');
             const opt = {
-                margin: [15, 15, 15, 15],
+                margin: [10, 10, 10, 10],
                 filename: `Attestation_Luckily_Academy_${cleanName}.pdf`,
                 image: { 
                     type: 'jpeg', 
@@ -787,21 +863,21 @@
                     letterRendering: true,
                     backgroundColor: '#f9f7f3',
                     width: 1100,
-                    height: 700,
+                    height: 750,
                     windowWidth: 1100
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a3', 
-                    orientation: 'landscape'  // Format PAYSAGE pour éviter la coupure
+                    orientation: 'landscape'
                 }
             };
             
             // Générer et télécharger le PDF
             html2pdf().set(opt).from(element).save().then(() => {
                 // Après le téléchargement, restaurer les valeurs originales pour l'affichage
-                document.getElementById('certMatricule').textContent = originalMatricule;
-                document.getElementById('certMatriculeText').textContent = originalMatriculeText;
+                document.getElementById('certMatricule').textContent = currentMatricule;
+                document.getElementById('certMatriculeText').textContent = currentMatriculeText;
                 
                 // Afficher un message de confirmation
                 alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_Luckily_Academy_${cleanName}.pdf\nProchain numéro matricule: ${formattedMatricule}\n\nTotal de téléchargements: ${downloadCount}`);
@@ -814,4 +890,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
