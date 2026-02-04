@@ -38,7 +38,7 @@
         
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -94,7 +94,7 @@
         .form-section {
             flex: 1;
             min-width: 300px;
-            max-width: 450px;
+            max-width: 500px;
             background-color: var(--white);
             padding: 30px;
             border-radius: 12px;
@@ -177,7 +177,7 @@
         }
         
         .certificate-section {
-            flex: 1.5;
+            flex: 2;
             min-width: 300px;
             display: flex;
             justify-content: center;
@@ -186,8 +186,9 @@
         
         .certificate-container {
             width: 100%;
+            max-width: 1200px;
             background-color: var(--white);
-            padding: 15px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -198,11 +199,11 @@
             position: relative;
             background-color: var(--off-white);
             border: 2px solid var(--primary-blue);
-            padding: 30px;
+            padding: 40px;
             width: 100%;
-            /* Dimensions exactes A4 en pixels (210mm x 297mm) avec 96 DPI */
-            width: 794px;  /* 210mm * (96/25.4) = ~794px */
-            min-height: 1123px; /* 297mm * (96/25.4) = ~1123px */
+            /* Format A4 paysage : 297mm x 210mm */
+            width: 1123px;  /* 297mm * (96/25.4) = ~1123px */
+            min-height: 794px; /* 210mm * (96/25.4) = ~794px */
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -231,16 +232,15 @@
         
         .certificate-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             position: relative;
         }
         
         .logo-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .logo {
@@ -251,7 +251,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-right: 25px;
             color: white;
             font-size: 2.8rem;
             box-shadow: 0 6px 15px rgba(56, 189, 248, 0.3);
@@ -259,17 +259,16 @@
         
         .academy-name {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: var(--primary-blue);
             letter-spacing: 2px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 8px;
         }
         
         .academy-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--medium-blue);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 500;
             letter-spacing: 1px;
         }
@@ -279,10 +278,10 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
-            margin-top: 20px;
+            margin-top: 15px;
             font-size: 0.95rem;
             color: var(--primary-blue);
-            padding: 15px 0;
+            padding: 10px 0;
         }
         
         .contact-item {
@@ -294,7 +293,7 @@
         .divider {
             height: 3px;
             background: linear-gradient(to right, transparent, var(--gold), var(--light-blue), var(--gold), transparent);
-            margin: 25px 0 40px 0;
+            margin: 20px 0 35px 0;
             position: relative;
         }
         
@@ -308,42 +307,42 @@
         }
         
         .divider:before {
-            left: 15%;
+            left: 10%;
         }
         
         .divider:after {
-            right: 15%;
+            right: 10%;
         }
         
         .certificate-title {
             font-family: 'Playfair Display', serif;
             text-align: center;
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             color: var(--primary-blue);
-            margin: 10px 0 60px 0;
+            margin: 10px 0 50px 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
         }
         
         .certificate-body {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             line-height: 1.8;
             color: #333;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         
         .field-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
         
         .field {
             flex: 1;
-            margin-right: 40px;
+            margin-right: 50px;
         }
         
         .field:last-child {
@@ -353,17 +352,17 @@
         .field-label {
             font-weight: 600;
             color: var(--primary-blue);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: block;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
         .field-value {
-            padding-bottom: 8px;
+            padding-bottom: 10px;
             border-bottom: 2px dotted var(--dark-gray);
-            min-height: 32px;
+            min-height: 35px;
             color: #111;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
         
         .highlight {
@@ -372,32 +371,32 @@
         }
         
         .main-text {
-            margin: 25px 0;
+            margin: 30px 0;
             text-align: center;
-            line-height: 1.9;
-            font-size: 1.15rem;
+            line-height: 2.0;
+            font-size: 1.25rem;
         }
         
         .training-highlight {
             display: inline-block;
             font-weight: 700;
             color: var(--primary-blue);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             background-color: rgba(56, 189, 248, 0.1);
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 4px;
-            margin: 10px 0;
+            margin: 15px 0;
         }
         
         .student-info-line {
             text-align: center;
-            margin: 30px 0;
-            font-size: 1.2rem;
+            margin: 35px 0;
+            font-size: 1.3rem;
         }
         
         .mention-box {
             text-align: center;
-            margin: 40px 0 50px 0;
+            margin: 45px 0 55px 0;
             padding: 25px;
             background-color: rgba(212, 175, 55, 0.08);
             border-radius: 8px;
@@ -407,14 +406,14 @@
         .signature-area {
             display: flex;
             justify-content: space-between;
-            margin-top: 80px;
-            padding-top: 30px;
+            margin-top: 70px;
+            padding-top: 35px;
             border-top: 1px solid #ccc;
         }
         
         .place-date {
             flex: 1;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
         }
         
         .signature-box {
@@ -423,29 +422,29 @@
         }
         
         .signature-line {
-            width: 280px;
+            width: 350px;
             height: 1px;
             background-color: #333;
-            margin: 40px 0 5px auto;
+            margin: 45px 0 8px auto;
         }
         
         .signature-name {
             font-weight: 700;
             color: var(--primary-blue);
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             margin-top: 5px;
         }
         
         .signature-title {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--dark-gray);
         }
         
         .serial-number {
             position: absolute;
-            bottom: 35px;
+            bottom: 40px;
             left: 40px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--dark-gray);
         }
         
@@ -483,22 +482,22 @@
             }
             
             .certificate-container {
-                padding: 10px;
+                padding: 15px;
             }
             
             .certificate {
                 width: 100%;
-                max-width: 794px;
+                max-width: 1123px;
                 min-height: auto;
-                padding: 25px;
+                padding: 30px;
             }
             
             .certificate-title {
-                font-size: 2.3rem;
+                font-size: 2.4rem;
             }
             
             .academy-name {
-                font-size: 2.4rem;
+                font-size: 2.6rem;
             }
             
             .field-row {
@@ -507,17 +506,23 @@
             
             .field {
                 margin-right: 0;
-                margin-bottom: 25px;
+                margin-bottom: 30px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 20px;
             }
         }
         
-        @media (max-width: 850px) {
+        @media (max-width: 768px) {
             .header-title {
                 font-size: 2rem;
-            }
-            
-            .certificate {
-                padding: 20px;
             }
             
             .certificate-title {
@@ -526,7 +531,7 @@
             }
             
             .academy-name {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             .academy-subtitle {
@@ -542,7 +547,7 @@
             .signature-area {
                 flex-direction: column;
                 gap: 30px;
-                margin-top: 60px;
+                margin-top: 50px;
             }
             
             .signature-box {
@@ -550,17 +555,12 @@
             }
             
             .signature-line {
-                width: 220px;
+                width: 250px;
                 margin: 40px 0 5px 0;
             }
             
-            .logo-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .logo {
-                margin-bottom: 15px;
+            .certificate-body {
+                padding: 0 15px;
             }
         }
         
@@ -578,16 +578,15 @@
             .certificate-container {
                 box-shadow: none;
                 padding: 0;
-                width: 100%;
                 max-width: none;
             }
             
             .certificate {
                 border: 2px solid var(--primary-blue);
-                width: 210mm;
-                min-height: 297mm;
+                width: 297mm;
+                min-height: 210mm;
                 margin: 0;
-                padding: 25mm;
+                padding: 20mm;
             }
         }
     </style>
@@ -642,6 +641,11 @@
                     <input type="date" id="date" class="form-input" value="">
                 </div>
                 
+                <div class="form-group">
+                    <label class="form-label" for="matricule">Numéro matricule :</label>
+                    <input type="text" id="matricule" class="form-input" placeholder="Ex: 0001314" value="0001313">
+                </div>
+                
                 <button id="generateBtn" class="btn">Mettre à jour l'Attestation</button>
                 <button id="downloadBtn" class="btn btn-download">
                     <i class="fas fa-download"></i> Télécharger l'Attestation (PDF)
@@ -649,7 +653,7 @@
                 
                 <div class="info-message">
                     <i class="fas fa-info-circle"></i> 
-                    Le numéro matricule est généré automatiquement et s'incrémente à chaque téléchargement. Format A4 portrait exact.
+                    Chaque étudiant doit avoir un numéro matricule unique. Format A4 paysage.
                 </div>
             </section>
             
@@ -720,7 +724,7 @@
                                 
                                 <div class="mention-box">
                                     <p>Le candidat a obtenu la mention :</p>
-                                    <p><span id="certMention" class="highlight" style="font-size: 1.7rem;">Bien</span></p>
+                                    <p><span id="certMention" class="highlight" style="font-size: 1.8rem;">Bien</span></p>
                                 </div>
                                 
                                 <div class="main-text">
@@ -752,7 +756,7 @@
         
         <footer class="footer">
             <p>Luckily Academy &copy; 2023 - Centre de Formation Professionnelle</p>
-            <p>Cet outil génère des attestations officielles avec numéros de série uniques. Format A4 portrait exact.</p>
+            <p>Cet outil génère des attestations officielles avec numéros de série uniques. Format A4 paysage.</p>
         </footer>
     </div>
     
@@ -761,14 +765,7 @@
     
     <script>
         // Initialisation des variables
-        let matriculeNumber = 1313; // Commence à 0001313
         let downloadCount = 0;
-        
-        // Fonction pour mettre à jour l'affichage du matricule
-        function updateMatriculeDisplay() {
-            const formattedMatricule = matriculeNumber.toString().padStart(7, '0');
-            document.getElementById('certMatricule').textContent = formattedMatricule;
-        }
         
         // Initialiser la date d'aujourd'hui
         document.addEventListener('DOMContentLoaded', function() {
@@ -779,9 +776,6 @@
             // Formater la date pour l'affichage
             const displayDate = formatDate(today);
             document.getElementById('certDate').textContent = displayDate;
-            
-            // Mettre à jour l'affichage du matricule
-            updateMatriculeDisplay();
             
             // Générer l'attestation avec les valeurs par défaut
             updateCertificate();
@@ -805,6 +799,7 @@
         document.getElementById('mention').addEventListener('change', updateCertificate);
         document.getElementById('city').addEventListener('input', updateCertificate);
         document.getElementById('date').addEventListener('change', updateCertificate);
+        document.getElementById('matricule').addEventListener('input', updateCertificate);
         
         function updateCertificate() {
             // Récupérer les valeurs du formulaire
@@ -813,6 +808,7 @@
             const mention = document.getElementById('mention').value;
             const city = document.getElementById('city').value || "Cotonou";
             const dateValue = document.getElementById('date').value;
+            const matricule = document.getElementById('matricule').value || "0001313";
             
             // Formater la date pour l'affichage
             let displayDate = "__/__/____";
@@ -828,6 +824,7 @@
             document.getElementById('certMention').textContent = mention;
             document.getElementById('certCity').textContent = city;
             document.getElementById('certDate').textContent = displayDate;
+            document.getElementById('certMatricule').textContent = matricule;
             
             // Générer un numéro de série unique basé sur le nom et la date
             const serial = generateSerialNumber(fullName, dateValue);
@@ -844,55 +841,54 @@
         
         // Télécharger l'attestation en PDF
         document.getElementById('downloadBtn').addEventListener('click', function() {
-            // Incrémenter le numéro matricule
-            matriculeNumber++;
             downloadCount++;
-            
-            // Mettre à jour l'affichage du matricule AVANT la génération du PDF
-            updateMatriculeDisplay();
-            
-            // Formater le numéro matricule mis à jour
-            const formattedMatricule = matriculeNumber.toString().padStart(7, '0');
             
             // Récupérer les informations pour le nom du fichier
             const fullName = document.getElementById('fullName').value || "Attestation";
+            const matricule = document.getElementById('matricule').value || "0001313";
             const cleanName = fullName.replace(/[^a-zA-Z0-9]/g, '_').substring(0, 20);
             
-            // Configuration pour html2pdf - Format A4 PORTRAIT EXACT
+            // Configuration pour html2pdf - Format A4 PAYSAGE
             const element = document.getElementById('certificate');
             const opt = {
                 margin: [0, 0, 0, 0],
-                filename: `Attestation_Luckily_Academy_${cleanName}.pdf`,
+                filename: `Attestation_${matricule}_${cleanName}.pdf`,
                 image: { 
                     type: 'jpeg', 
-                    quality: 1.0 
+                    quality: 0.98 
                 },
                 html2canvas: { 
-                    scale: 4, // Augmenté pour une meilleure qualité
+                    scale: 2,
                     useCORS: true,
                     letterRendering: true,
                     backgroundColor: '#f9f7f3',
-                    width: 794, // Largeur exacte A4 en pixels
-                    height: 1123, // Hauteur exacte A4 en pixels
-                    windowWidth: 794
+                    width: 1123, // Largeur A4 paysage en pixels
+                    height: 794, // Hauteur A4 paysage en pixels
+                    windowWidth: 1123,
+                    onclone: function(clonedDoc) {
+                        // Forcer le chargement des icônes FontAwesome
+                        const logos = clonedDoc.querySelectorAll('.logo i');
+                        logos.forEach(logo => {
+                            logo.style.fontFamily = "'Font Awesome 6 Free'";
+                            logo.style.fontWeight = '900';
+                        });
+                    }
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a4', 
-                    orientation: 'portrait',
+                    orientation: 'landscape', // PAYSAGE
                     compress: true
-                },
-                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+                }
             };
             
             // Générer et télécharger le PDF
             html2pdf().set(opt).from(element).save().then(() => {
-                // Afficher un message de confirmation avec le prochain numéro
-                const nextMatricule = (matriculeNumber + 1).toString().padStart(7, '0');
-                alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_Luckily_Academy_${cleanName}.pdf\nNuméro matricule utilisé: ${formattedMatricule}\nProchain numéro matricule: ${nextMatricule}\n\nTotal de téléchargements: ${downloadCount}`);
-                
-                // Mettre à jour aussi le certificat affiché pour le prochain
-                updateCertificate();
+                // Afficher un message de confirmation
+                alert(`Attestation téléchargée avec succès!\n\nNom du fichier: Attestation_${matricule}_${cleanName}.pdf\nNuméro matricule: ${matricule}\n\nTotal de téléchargements: ${downloadCount}`);
+            }).catch(err => {
+                console.error('Erreur lors de la génération du PDF:', err);
+                alert('Erreur lors de la génération du PDF. Veuillez réessayer.');
             });
         });
         
