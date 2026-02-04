@@ -38,7 +38,7 @@
         
         .container {
             width: 100%;
-            max-width: 1400px;
+            max-width: 1200px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -94,7 +94,7 @@
         .form-section {
             flex: 1;
             min-width: 300px;
-            max-width: 500px;
+            max-width: 450px;
             background-color: var(--white);
             padding: 30px;
             border-radius: 12px;
@@ -177,7 +177,7 @@
         }
         
         .certificate-section {
-            flex: 2;
+            flex: 1.5;
             min-width: 300px;
             display: flex;
             justify-content: center;
@@ -186,7 +186,7 @@
         
         .certificate-container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 850px;
             background-color: var(--white);
             padding: 20px;
             border-radius: 12px;
@@ -201,7 +201,7 @@
             border: 2px solid var(--primary-blue);
             padding: 40px;
             width: 100%;
-            min-height: 750px;
+            min-height: 1100px; /* Hauteur augmentée pour le format portrait */
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -230,41 +230,43 @@
         
         .certificate-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             position: relative;
         }
         
         .logo-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: linear-gradient(135deg, var(--light-blue), var(--medium-blue));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
+            margin-bottom: 20px;
             color: white;
-            font-size: 2.5rem;
+            font-size: 3rem;
             box-shadow: 0 6px 15px rgba(56, 189, 248, 0.3);
         }
         
         .academy-name {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             color: var(--primary-blue);
             letter-spacing: 2px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
         }
         
         .academy-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--medium-blue);
             margin-bottom: 15px;
             font-weight: 500;
@@ -276,7 +278,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 10px;
+            margin-top: 20px;
             font-size: 0.9rem;
             color: var(--primary-blue);
             padding: 10px 0;
@@ -291,7 +293,7 @@
         .divider {
             height: 2px;
             background: linear-gradient(to right, transparent, var(--gold), var(--light-blue), var(--gold), transparent);
-            margin: 20px 0 30px 0;
+            margin: 30px 0 40px 0;
             position: relative;
         }
         
@@ -301,7 +303,7 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--gold);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
         
         .divider:before {
@@ -317,14 +319,14 @@
             text-align: center;
             font-size: 2.8rem;
             color: var(--primary-blue);
-            margin: 10px 0 40px 0;
+            margin: 10px 0 50px 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             letter-spacing: 2px;
         }
         
         .certificate-body {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            line-height: 1.8;
             color: #333;
             flex-grow: 1;
             display: flex;
@@ -334,7 +336,7 @@
         .field-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         
         .field {
@@ -349,17 +351,17 @@
         .field-label {
             font-weight: 600;
             color: var(--primary-blue);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             display: block;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
         }
         
         .field-value {
-            padding-bottom: 8px;
+            padding-bottom: 10px;
             border-bottom: 2px dotted var(--dark-gray);
-            min-height: 28px;
+            min-height: 35px;
             color: #111;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
         
         .highlight {
@@ -368,32 +370,49 @@
         }
         
         .main-text {
-            margin: 25px 0;
-            text-align: justify;
-            line-height: 1.8;
+            margin: 30px 0;
+            text-align: center;
+            line-height: 2.0;
+            font-size: 1.3rem;
         }
         
         .training-highlight {
             display: inline-block;
             font-weight: 700;
             color: var(--primary-blue);
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             background-color: rgba(56, 189, 248, 0.1);
-            padding: 5px 10px;
+            padding: 8px 15px;
             border-radius: 4px;
             margin: 0 5px;
+        }
+        
+        .student-info-line {
+            text-align: center;
+            margin: 25px 0;
+            font-size: 1.3rem;
+        }
+        
+        .mention-box {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(212, 175, 55, 0.05);
+            border-radius: 8px;
+            border: 1px solid var(--gold);
         }
         
         .signature-area {
             display: flex;
             justify-content: space-between;
-            margin-top: 40px;
-            padding-top: 30px;
+            margin-top: 60px;
+            padding-top: 40px;
             border-top: 1px solid #ccc;
         }
         
         .place-date {
             flex: 1;
+            font-size: 1.2rem;
         }
         
         .signature-box {
@@ -411,20 +430,20 @@
         .signature-name {
             font-weight: 700;
             color: var(--primary-blue);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-top: 5px;
         }
         
         .signature-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--dark-gray);
         }
         
         .serial-number {
             position: absolute;
-            bottom: 30px;
+            bottom: 40px;
             left: 40px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--dark-gray);
         }
         
@@ -467,7 +486,7 @@
             
             .certificate {
                 padding: 30px;
-                min-height: 800px;
+                min-height: 1000px;
             }
             
             .certificate-title {
@@ -475,7 +494,7 @@
             }
             
             .academy-name {
-                font-size: 2.3rem;
+                font-size: 2.5rem;
             }
             
             .field-row {
@@ -527,8 +546,11 @@
             }
             
             .logo {
-                margin-right: 0;
                 margin-bottom: 10px;
+            }
+            
+            .certificate {
+                min-height: 900px;
             }
         }
         
@@ -550,7 +572,7 @@
             
             .certificate {
                 border: 2px solid var(--primary-blue);
-                min-height: 750px;
+                min-height: 1100px;
             }
         }
     </style>
@@ -612,7 +634,7 @@
                 
                 <div class="info-message">
                     <i class="fas fa-info-circle"></i> 
-                    Le numéro matricule est généré automatiquement et s'incrémente à chaque téléchargement. Format paysage A3 pour un meilleur affichage.
+                    Le numéro matricule est généré automatiquement et s'incrémente à chaque téléchargement. Format portrait A4 pour un meilleur affichage.
                 </div>
             </section>
             
@@ -671,17 +693,22 @@
                                     <p>Le centre de formation <span class="highlight">Luckily Academy</span> atteste par la présente que l'apprenant(e) :</p>
                                 </div>
                                 
-                                <div class="main-text">
+                                <div class="student-info-line">
                                     <p><strong>Nom et Prénom :</strong> <span id="certFullNameText" class="highlight">DEGUENON Joseph Yelinha</span></p>
                                 </div>
                                 
                                 <div class="main-text">
-                                    <p>a suivi avec assiduité et succès la formation professionnelle en <span id="certTraining" class="training-highlight">Développement Web Freelance</span> au sein du centre de formation professionnelle Luckily Academy.</p>
+                                    <p>a suivi avec assiduité et succès la formation professionnelle en</p>
+                                    <p><span id="certTraining" class="training-highlight">Développement Web Freelance</span></p>
+                                    <p>au sein du centre de formation professionnelle Luckily Academy.</p>
+                                </div>
+                                
+                                <div class="mention-box">
+                                    <p>Le candidat a obtenu la mention :</p>
+                                    <p><span id="certMention" class="highlight" style="font-size: 1.8rem;">Bien</span></p>
                                 </div>
                                 
                                 <div class="main-text">
-                                    <p>Le candidat a obtenu la mention : <span id="certMention" class="highlight">Bien</span></p>
-                                    
                                     <p>La présente attestation est délivrée à l'intéressé(e) pour faire valoir ce que de droit.</p>
                                 </div>
                                 
@@ -710,7 +737,7 @@
         
         <footer class="footer">
             <p>Luckily Academy &copy; 2023 - Centre de Formation Professionnelle</p>
-            <p>Cet outil génère des attestations officielles avec numéros de série uniques. Format paysage A3.</p>
+            <p>Cet outil génère des attestations officielles avec numéros de série uniques. Format portrait A4.</p>
         </footer>
     </div>
     
@@ -816,7 +843,7 @@
             // Mettre temporairement à jour avec le nouveau matricule pour le PDF
             document.getElementById('certMatricule').textContent = formattedMatricule;
             
-            // Configuration pour html2pdf - Format A3 PAYSAGE
+            // Configuration pour html2pdf - Format A4 PORTRAIT
             const element = document.getElementById('certificate');
             const opt = {
                 margin: [10, 10, 10, 10],
@@ -830,14 +857,14 @@
                     useCORS: true,
                     letterRendering: true,
                     backgroundColor: '#f9f7f3',
-                    width: 1100,
-                    height: 750,
-                    windowWidth: 1100
+                    width: 850,
+                    height: 1100,
+                    windowWidth: 850
                 },
                 jsPDF: { 
                     unit: 'mm', 
-                    format: 'a3', 
-                    orientation: 'landscape'
+                    format: 'a4', 
+                    orientation: 'portrait'
                 }
             };
             
@@ -857,4 +884,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
