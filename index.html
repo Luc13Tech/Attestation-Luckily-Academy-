@@ -148,7 +148,7 @@
         .certificate-container {
             width: 100%;
             background-color: var(--white);
-            padding: 10px;
+            padding: 15px; /* Espace ajouté autour */
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
@@ -157,11 +157,11 @@
             position: relative;
             background-color: var(--off-white);
             border: 2px solid var(--primary-blue);
-            padding: 20px;
+            padding: 25px; /* Espace interne augmenté */
             width: 100%;
             /* Dimensions A4 paysage en pixels */
-            width: 1100px;  /* Légèrement réduit */
-            height: 780px;  /* Légèrement réduit */
+            width: 1080px;  /* Légèrement réduit pour l'espacement */
+            height: 760px;  /* Légèrement réduit pour l'espacement */
             display: flex;
             flex-direction: column;
         }
@@ -237,7 +237,7 @@
             text-align: center;
             font-size: 1.8rem;
             color: var(--primary-blue);
-            margin: 8px 0 20px 0; /* Réduit */
+            margin: 8px 0 20px 0;
         }
         
         .certificate-body {
@@ -252,7 +252,7 @@
         
         .student-info {
             text-align: center;
-            margin-bottom: 15px; /* Réduit */
+            margin-bottom: 15px;
         }
         
         .student-name {
@@ -269,7 +269,7 @@
         
         .main-text {
             text-align: justify;
-            margin: 12px 0; /* Réduit */
+            margin: 12px 0;
             line-height: 1.6;
         }
         
@@ -296,26 +296,28 @@
         .signature-area {
             display: flex;
             justify-content: space-between;
-            margin-top: 25px; /* Réduit */
-            padding-top: 15px;
-            border-top: 2px solid var(--gold); /* Bordure élégante */
+            margin-top: 40px; /* Augmenté pour descendre le lieu et date */
+            padding-top: 20px; /* Augmenté */
+            border-top: 2px solid var(--gold);
         }
         
         .place-date {
             flex: 1;
             font-size: 0.9rem;
+            padding-top: 10px; /* Espace ajouté */
         }
         
         .signature-box {
             flex: 1;
             text-align: right;
+            padding-top: 10px; /* Espace ajouté */
         }
         
         .signature-line {
             width: 220px;
-            height: 2px; /* Épaisseur augmentée */
-            background: linear-gradient(to right, transparent, var(--primary-blue), transparent); /* Dégradé élégant */
-            margin: 15px 0 5px auto; /* Ajusté */
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
+            margin: 15px 0 5px auto;
         }
         
         .signature-name {
@@ -331,20 +333,20 @@
         
         .serial-number {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
+            bottom: 25px; /* Descendu */
+            left: 25px;
             font-size: 0.75rem;
             color: var(--dark-gray);
-            border-top: 1px solid rgba(0, 0, 0, 0.1); /* Ligne fine au dessus */
-            padding-top: 5px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 8px; /* Espace augmenté */
             width: 250px;
         }
         
         .footer-line {
             position: absolute;
-            bottom: 50px;
-            left: 20px;
-            right: 20px;
+            bottom: 60px; /* Descendu pour l'espacement */
+            left: 25px;
+            right: 25px;
             height: 1px;
             background: linear-gradient(to right, transparent, var(--gold), var(--light-blue), var(--gold), transparent);
         }
@@ -366,14 +368,14 @@
             .certificate {
                 width: 100%;
                 height: auto;
-                max-width: 1100px;
-                min-height: 780px;
+                max-width: 1080px;
+                min-height: 760px;
             }
         }
         
         @media (max-width: 768px) {
             .certificate {
-                padding: 15px;
+                padding: 20px;
             }
             
             .academy-name {
@@ -386,7 +388,7 @@
             
             .signature-area {
                 flex-direction: column;
-                gap: 15px;
+                gap: 20px;
             }
             
             .signature-box {
@@ -630,9 +632,9 @@
                     scale: 2,
                     useCORS: true,
                     backgroundColor: '#f9f7f3',
-                    width: 1100,
-                    height: 780,
-                    windowWidth: 1100
+                    width: 1080,
+                    height: 760,
+                    windowWidth: 1080
                 },
                 jsPDF: { 
                     unit: 'mm', 
