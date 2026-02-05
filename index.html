@@ -465,11 +465,12 @@
             font-size: 0.85rem;
         }
         
-        /* Cachet officiel - Version bleue - Déplacé vers le bas */
+        /* Cachet officiel - Version bleue - Positionné au centre vers le bas */
         .cachet {
             position: absolute;
-            right: 70px;
-            bottom: 1px; /* Modifié de 55px à 1px pour descendre le cachet */
+            left: 50%;
+            bottom: 65px; /* Encore plus bas */
+            transform: translateX(-50%);
             width: 140px;
             height: 140px;
             opacity: 0.85;
@@ -606,8 +607,7 @@
             }
             
             .cachet {
-                right: 20px;
-                bottom: 60px; /* Ajusté aussi pour mobile */
+                bottom: 50px; /* Ajusté pour mobile */
                 width: 100px;
                 height: 100px;
             }
@@ -753,7 +753,7 @@
                                     <p>Le candidat a obtenu la mention <span id="certMention" class="highlight">Bien</span>. La présente attestation est délivrée à l'intéressé(e) pour faire valoir ce que de droit.</p>
                                 </div>
                                 
-                                <!-- Cachet officiel - Version bleue -->
+                                <!-- Cachet officiel - Version bleue - Positionné au centre vers le bas -->
                                 <div class="cachet">
                                     <div class="cachet-circle">
                                         <div class="cachet-stars">
