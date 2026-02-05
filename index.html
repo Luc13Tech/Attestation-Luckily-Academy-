@@ -465,14 +465,14 @@
             font-size: 0.85rem;
         }
         
-        /* Cachet officiel */
+        /* Cachet officiel - Version bleue */
         .cachet {
             position: absolute;
             right: 70px;
             bottom: 85px;
-            width: 130px;
-            height: 130px;
-            opacity: 0.75;
+            width: 140px;
+            height: 140px;
+            opacity: 0.85;
             z-index: 10;
             pointer-events: none;
         }
@@ -480,10 +480,11 @@
         .cachet-circle {
             width: 100%;
             height: 100%;
-            border: 3px solid rgba(220, 0, 0, 0.8);
+            border: 4px solid var(--primary-blue);
             border-radius: 50%;
             position: relative;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 10px rgba(30, 58, 138, 0.3);
         }
         
         .cachet-text {
@@ -492,30 +493,35 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: rgba(220, 0, 0, 0.9);
+            color: var(--primary-blue);
             font-weight: 700;
             font-size: 1rem;
             line-height: 1.2;
-            width: 85%;
+            width: 80%;
         }
         
         .cachet-text-top {
             font-size: 0.9rem;
-            margin-bottom: 2px;
+            margin-bottom: 5px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
         
         .cachet-text-bottom {
             font-size: 0.8rem;
-            margin-top: 2px;
+            margin-top: 5px;
+            font-weight: 700;
         }
         
         .cachet-center {
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin: 4px 0;
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin: 8px 0;
+            color: var(--medium-blue);
+            text-transform: uppercase;
         }
         
-        .cachet-lines {
+        .cachet-stars {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -523,41 +529,34 @@
             left: 0;
         }
         
-        .cachet-line {
+        .cachet-star {
             position: absolute;
-            background: rgba(220, 0, 0, 0.6);
+            color: var(--medium-blue);
+            font-size: 0.8rem;
         }
         
-        .cachet-line-horizontal {
-            width: 100%;
-            height: 1px;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-        }
-        
-        .cachet-line-vertical {
-            width: 1px;
-            height: 100%;
+        .star-top {
+            top: 15px;
             left: 50%;
-            top: 0;
             transform: translateX(-50%);
         }
         
-        .cachet-line-diagonal1 {
-            width: 1px;
-            height: 140%;
+        .star-bottom {
+            bottom: 15px;
             left: 50%;
-            top: -20%;
-            transform: translateX(-50%) rotate(45deg);
+            transform: translateX(-50%);
         }
         
-        .cachet-line-diagonal2 {
-            width: 1px;
-            height: 140%;
-            left: 50%;
-            top: -20%;
-            transform: translateX(-50%) rotate(-45deg);
+        .star-left {
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .star-right {
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
         }
         
         @media (max-width: 1200px) {
@@ -626,6 +625,10 @@
             }
             
             .cachet-text-bottom {
+                font-size: 0.6rem;
+            }
+            
+            .cachet-star {
                 font-size: 0.6rem;
             }
         }
@@ -750,14 +753,14 @@
                                     <p>Le candidat a obtenu la mention <span id="certMention" class="highlight">Bien</span>. La présente attestation est délivrée à l'intéressé(e) pour faire valoir ce que de droit.</p>
                                 </div>
                                 
-                                <!-- Cachet officiel -->
+                                <!-- Cachet officiel - Version bleue -->
                                 <div class="cachet">
                                     <div class="cachet-circle">
-                                        <div class="cachet-lines">
-                                            <div class="cachet-line cachet-line-horizontal"></div>
-                                            <div class="cachet-line cachet-line-vertical"></div>
-                                            <div class="cachet-line cachet-line-diagonal1"></div>
-                                            <div class="cachet-line cachet-line-diagonal2"></div>
+                                        <div class="cachet-stars">
+                                            <div class="cachet-star star-top">★</div>
+                                            <div class="cachet-star star-bottom">★</div>
+                                            <div class="cachet-star star-left">★</div>
+                                            <div class="cachet-star star-right">★</div>
                                         </div>
                                         <div class="cachet-text">
                                             <div class="cachet-text-top">LUCKILY ACADEMY</div>
@@ -907,4 +910,4 @@
         });
     </script>
 </body>
-</html>
+                        </html>
