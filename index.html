@@ -148,7 +148,7 @@
         .certificate-container {
             width: 100%;
             background-color: var(--white);
-            padding: 10px; /* Réduit de 15px */
+            padding: 10px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
@@ -156,15 +156,20 @@
         .certificate {
             position: relative;
             background-color: var(--off-white);
-            border: 2px solid var(--primary-blue);
-            padding: 20px; /* Réduit de 25px */
+            padding: 20px;
             width: 100%;
             /* Dimensions A4 paysage en pixels */
             width: 1080px;
             height: 760px;
             display: flex;
             flex-direction: column;
-            margin-top: -10px; /* Déplacé vers le haut */
+            margin-top: -10px;
+            /* Bordure élégante avec traits multiples */
+            border: 3px double var(--primary-blue);
+            border-top: 6px double var(--gold);
+            border-bottom: 6px double var(--primary-blue);
+            border-left: 4px solid var(--light-blue);
+            border-right: 4px solid var(--light-blue);
         }
         
         .certificate-content {
@@ -176,14 +181,14 @@
         
         .certificate-header {
             text-align: center;
-            margin-bottom: 10px; /* Réduit de 15px */
+            margin-bottom: 10px;
         }
         
         .logo-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 6px; /* Réduit de 8px */
+            margin-bottom: 6px;
         }
         
         .logo {
@@ -197,6 +202,8 @@
             margin-right: 15px;
             color: white;
             font-size: 1.8rem;
+            border: 3px double var(--white);
+            box-shadow: 0 0 0 2px var(--gold);
         }
         
         .academy-name {
@@ -215,8 +222,8 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* Réduit de 12px */
-            margin-top: 6px; /* Réduit de 8px */
+            gap: 10px;
+            margin-top: 6px;
             font-size: 0.75rem;
             color: var(--primary-blue);
         }
@@ -228,9 +235,30 @@
         }
         
         .divider {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--gold), var(--light-blue), var(--gold), transparent);
-            margin: 10px 0; /* Réduit de 12px */
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--gold) 0px,
+                var(--gold) 10px,
+                var(--light-blue) 10px,
+                var(--light-blue) 20px,
+                var(--primary-blue) 20px,
+                var(--primary-blue) 30px
+            );
+            margin: 12px 0;
+            position: relative;
+        }
+        
+        .divider:before {
+            content: "❖";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--off-white);
+            color: var(--gold);
+            font-size: 1.2rem;
+            padding: 0 10px;
         }
         
         .certificate-title {
@@ -238,7 +266,8 @@
             text-align: center;
             font-size: 1.8rem;
             color: var(--primary-blue);
-            margin: 6px 0 15px 0; /* Réduit */
+            margin: 8px 0 18px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         .certificate-body {
@@ -253,7 +282,7 @@
         
         .student-info {
             text-align: center;
-            margin-bottom: 12px; /* Réduit de 15px */
+            margin-bottom: 12px;
         }
         
         .student-name {
@@ -270,7 +299,7 @@
         
         .main-text {
             text-align: justify;
-            margin: 10px 0; /* Réduit de 12px */
+            margin: 10px 0;
             line-height: 1.6;
         }
         
@@ -287,6 +316,8 @@
             background-color: rgba(56, 189, 248, 0.1);
             padding: 3px 8px;
             border-radius: 3px;
+            border-left: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
         }
         
         .highlight {
@@ -297,28 +328,63 @@
         .signature-area {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px; /* Réduit de 40px */
-            padding-top: 15px; /* Réduit de 20px */
-            border-top: 2px solid var(--gold);
+            margin-top: 30px;
+            padding-top: 20px;
+            /* Bordure supérieure élégante */
+            border-top: 3px double var(--gold);
+            position: relative;
+        }
+        
+        .signature-area:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: linear-gradient(to right, 
+                transparent, 
+                var(--light-blue), 
+                var(--primary-blue), 
+                var(--light-blue), 
+                transparent
+            );
         }
         
         .place-date {
             flex: 1;
             font-size: 0.9rem;
-            padding-top: 5px; /* Réduit de 10px */
+            padding-top: 5px;
         }
         
         .signature-box {
             flex: 1;
             text-align: right;
-            padding-top: 5px; /* Réduit de 10px */
+            padding-top: 5px;
         }
         
         .signature-line {
             width: 220px;
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--primary-blue), transparent);
-            margin: 12px 0 5px auto; /* Ajusté */
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--primary-blue) 0px,
+                var(--primary-blue) 5px,
+                transparent 5px,
+                transparent 10px
+            );
+            margin: 15px 0 8px auto;
+            position: relative;
+        }
+        
+        .signature-line:before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gold);
         }
         
         .signature-name {
@@ -334,22 +400,65 @@
         
         .serial-number {
             position: absolute;
-            bottom: 20px; /* Réduit de 25px */
+            bottom: 20px;
             left: 25px;
             font-size: 0.75rem;
             color: var(--dark-gray);
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            padding-top: 6px; /* Réduit de 8px */
+            padding-top: 6px;
             width: 250px;
+            /* Ligne décorative au-dessus */
+            border-top: 2px dotted var(--light-blue);
         }
         
         .footer-line {
             position: absolute;
-            bottom: 50px; /* Réduit de 60px */
+            bottom: 50px;
             left: 25px;
             right: 25px;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--gold), var(--light-blue), var(--gold), transparent);
+            height: 2px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--gold) 0px,
+                var(--gold) 5px,
+                var(--light-blue) 5px,
+                var(--light-blue) 10px,
+                var(--primary-blue) 10px,
+                var(--primary-blue) 15px
+            );
+        }
+        
+        .corner-decoration {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .corner-tl {
+            top: 10px;
+            left: 10px;
+            border-top: 3px solid var(--gold);
+            border-left: 3px solid var(--gold);
+        }
+        
+        .corner-tr {
+            top: 10px;
+            right: 10px;
+            border-top: 3px solid var(--gold);
+            border-right: 3px solid var(--gold);
+        }
+        
+        .corner-bl {
+            bottom: 10px;
+            left: 10px;
+            border-bottom: 3px solid var(--primary-blue);
+            border-left: 3px solid var(--primary-blue);
+        }
+        
+        .corner-br {
+            bottom: 10px;
+            right: 10px;
+            border-bottom: 3px solid var(--primary-blue);
+            border-right: 3px solid var(--primary-blue);
         }
         
         .info-message {
@@ -400,6 +509,10 @@
             
             .signature-line {
                 margin-left: 0;
+            }
+            
+            .corner-decoration {
+                display: none;
             }
         }
     </style>
@@ -468,6 +581,11 @@
             <section class="certificate-section">
                 <div class="certificate-container">
                     <div class="certificate" id="certificate">
+                        <div class="corner-decoration corner-tl"></div>
+                        <div class="corner-decoration corner-tr"></div>
+                        <div class="corner-decoration corner-bl"></div>
+                        <div class="corner-decoration corner-br"></div>
+                        
                         <div class="certificate-content">
                             <div class="certificate-header">
                                 <div class="logo-container">
