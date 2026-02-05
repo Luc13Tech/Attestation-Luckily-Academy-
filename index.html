@@ -158,13 +158,11 @@
             background-color: var(--off-white);
             padding: 20px;
             width: 100%;
-            /* Dimensions A4 paysage en pixels */
             width: 1080px;
             height: 760px;
             display: flex;
             flex-direction: column;
             margin-top: -10px;
-            /* Bordure élégante avec traits multiples */
             border: 3px double var(--primary-blue);
             border-top: 6px double var(--gold);
             border-bottom: 6px double var(--primary-blue);
@@ -330,7 +328,6 @@
             justify-content: space-between;
             margin-top: 30px;
             padding-top: 20px;
-            /* Bordure supérieure élégante */
             border-top: 3px double var(--gold);
             position: relative;
         }
@@ -406,7 +403,6 @@
             color: var(--dark-gray);
             padding-top: 6px;
             width: 250px;
-            /* Ligne décorative au-dessus */
             border-top: 2px dotted var(--light-blue);
         }
         
@@ -469,6 +465,101 @@
             font-size: 0.85rem;
         }
         
+        /* Cachet officiel */
+        .cachet {
+            position: absolute;
+            right: 70px;
+            bottom: 85px;
+            width: 130px;
+            height: 130px;
+            opacity: 0.75;
+            z-index: 10;
+            pointer-events: none;
+        }
+        
+        .cachet-circle {
+            width: 100%;
+            height: 100%;
+            border: 3px solid rgba(220, 0, 0, 0.8);
+            border-radius: 50%;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .cachet-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: rgba(220, 0, 0, 0.9);
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.2;
+            width: 85%;
+        }
+        
+        .cachet-text-top {
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+        
+        .cachet-text-bottom {
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+        
+        .cachet-center {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin: 4px 0;
+        }
+        
+        .cachet-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .cachet-line {
+            position: absolute;
+            background: rgba(220, 0, 0, 0.6);
+        }
+        
+        .cachet-line-horizontal {
+            width: 100%;
+            height: 1px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        
+        .cachet-line-vertical {
+            width: 1px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+        
+        .cachet-line-diagonal1 {
+            width: 1px;
+            height: 140%;
+            left: 50%;
+            top: -20%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+        
+        .cachet-line-diagonal2 {
+            width: 1px;
+            height: 140%;
+            left: 50%;
+            top: -20%;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+        
         @media (max-width: 1200px) {
             .main-content {
                 flex-direction: column;
@@ -513,6 +604,29 @@
             
             .corner-decoration {
                 display: none;
+            }
+            
+            .cachet {
+                right: 20px;
+                bottom: 70px;
+                width: 100px;
+                height: 100px;
+            }
+            
+            .cachet-text {
+                font-size: 0.8rem;
+            }
+            
+            .cachet-text-top {
+                font-size: 0.7rem;
+            }
+            
+            .cachet-center {
+                font-size: 0.9rem;
+            }
+            
+            .cachet-text-bottom {
+                font-size: 0.6rem;
             }
         }
     </style>
@@ -634,6 +748,23 @@
                                 
                                 <div class="main-text">
                                     <p>Le candidat a obtenu la mention <span id="certMention" class="highlight">Bien</span>. La présente attestation est délivrée à l'intéressé(e) pour faire valoir ce que de droit.</p>
+                                </div>
+                                
+                                <!-- Cachet officiel -->
+                                <div class="cachet">
+                                    <div class="cachet-circle">
+                                        <div class="cachet-lines">
+                                            <div class="cachet-line cachet-line-horizontal"></div>
+                                            <div class="cachet-line cachet-line-vertical"></div>
+                                            <div class="cachet-line cachet-line-diagonal1"></div>
+                                            <div class="cachet-line cachet-line-diagonal2"></div>
+                                        </div>
+                                        <div class="cachet-text">
+                                            <div class="cachet-text-top">LUCKILY ACADEMY</div>
+                                            <div class="cachet-center">CACHET</div>
+                                            <div class="cachet-text-bottom">FORMATION CERTIFIÉE</div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
                                 <div class="signature-area">
