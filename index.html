@@ -158,8 +158,8 @@
             background-color: var(--off-white);
             padding: 15px;
             width: 100%;
-            width: 1040px; /* Réduit de 1080px à 1020px */
-            height: 120px; /* Réduit de 760px à 720px */
+            width: 1020px;
+            height: 720px;
             display: flex;
             flex-direction: column;
             margin-top: -5px;
@@ -326,8 +326,8 @@
         .signature-area {
             display: flex;
             justify-content: space-between;
-            margin-top: 25px; /* Réduit de 30px à 25px */
-            padding-top: 15px; /* Réduit de 20px à 15px */
+            margin-top: 25px;
+            padding-top: 15px;
             border-top: 3px double var(--gold);
             position: relative;
         }
@@ -397,7 +397,7 @@
         
         .serial-number {
             position: absolute;
-            bottom: 15px; /* Réduit de 20px à 15px */
+            bottom: 15px;
             left: 25px;
             font-size: 0.75rem;
             color: var(--dark-gray);
@@ -408,7 +408,7 @@
         
         .footer-line {
             position: absolute;
-            bottom: 40px; /* Réduit de 50px à 40px */
+            bottom: 40px;
             left: 25px;
             right: 25px;
             height: 2px;
@@ -469,9 +469,9 @@
         .cachet {
             position: absolute;
             right: 20px;
-            bottom: 15px; /* Réduit de 20px à 15px */
-            width: 120px; /* Réduit de 130px à 120px */
-            height: 120px; /* Réduit de 130px à 120px */
+            bottom: -10px; /* Déplacé vers le bas d'environ 4cm (15px + 25px = 40px ≈ 4cm) */
+            width: 120px;
+            height: 120px;
             opacity: 0.85;
             z-index: 10;
             pointer-events: none;
@@ -495,28 +495,28 @@
             text-align: center;
             color: var(--primary-blue);
             font-weight: 700;
-            font-size: 0.9rem; /* Réduit de 0.95rem à 0.9rem */
+            font-size: 0.9rem;
             line-height: 1.2;
             width: 80%;
         }
         
         .cachet-text-top {
-            font-size: 0.8rem; /* Réduit de 0.85rem à 0.8rem */
+            font-size: 0.8rem;
             margin-bottom: 5px;
             font-weight: 800;
             letter-spacing: 0.5px;
         }
         
         .cachet-text-bottom {
-            font-size: 0.7rem; /* Réduit de 0.75rem à 0.7rem */
+            font-size: 0.7rem;
             margin-top: 5px;
             font-weight: 700;
         }
         
         .cachet-center {
-            font-size: 1rem; /* Réduit de 1.1rem à 1rem */
+            font-size: 1rem;
             font-weight: 900;
-            margin: 20px 0;
+            margin: 8px 0;
             color: var(--medium-blue);
             text-transform: uppercase;
         }
@@ -532,29 +532,29 @@
         .cachet-star {
             position: absolute;
             color: var(--medium-blue);
-            font-size: 0.7rem; /* Réduit de 0.75rem à 0.7rem */
+            font-size: 0.7rem;
         }
         
         .star-top {
-            top: 12px; /* Réduit de 15px à 12px */
+            top: 12px;
             left: 50%;
             transform: translateX(-50%);
         }
         
         .star-bottom {
-            bottom: 12px; /* Réduit de 15px à 12px */
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
         }
         
         .star-left {
-            left: 12px; /* Réduit de 15px à 12px */
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
         }
         
         .star-right {
-            right: 12px; /* Réduit de 15px à 12px */
+            right: 12px;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -607,7 +607,7 @@
             
             .cachet {
                 right: 15px;
-                bottom: 12px;
+                bottom: -5px;
                 width: 100px;
                 height: 100px;
             }
@@ -877,7 +877,7 @@
             
             const element = document.getElementById('certificate');
             const opt = {
-                margin: [5, 5, 5, 5], /* Ajout de marges pour éviter le débordement */
+                margin: [5, 5, 5, 5],
                 filename: `Attestation_${newMatricule}_${cleanName}.pdf`,
                 image: { 
                     type: 'jpeg', 
@@ -887,9 +887,9 @@
                     scale: 2,
                     useCORS: true,
                     backgroundColor: '#f9f7f3',
-                    width: 1020, /* Correspond à la nouvelle largeur */
-                    height: 720, /* Correspond à la nouvelle hauteur */
-                    windowWidth: 1020 /* Correspond à la nouvelle largeur */
+                    width: 1020,
+                    height: 720,
+                    windowWidth: 1020
                 },
                 jsPDF: { 
                     unit: 'mm', 
